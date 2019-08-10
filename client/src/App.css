@@ -1,0 +1,84 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 40vmin;
+  pointer-events: none;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.registrationForm{
+  display:flex;
+  flex-direction: column;
+}
+.registrationForm h1{
+  color:white;
+  background-color:red;
+  border:2px solid red;
+  width:80%;
+  margin:0 auto;
+  margin-top:20px;
+  padding:10px;
+  border-radius:190px;
+}
+
+Form{
+  width:60%;
+  border:2px solid black;
+  display:flex;
+  flex-direction: column;
+  margin:0 auto;
+  margin-top:30px;
+  padding:40px;
+  background-color:rgb(231, 229, 229);
+}
+input{
+  margin-top:20px;
+  height:4vh;
+}
+button{
+  margin-top:30px;
+  background-color:rgb(10, 145, 145);
+  color:white;
+  padding:10px;
+  border-radius:20px;
+}
+button:hover{
+  background-color:rgb(196, 30, 187);
+
+}
+.p{
+  border-bottom:2px solid black;
+  color:blue;
+
+}
+.card{
+  border:2px solid black;
+  width:35%;
+  height:10vh;
+}
