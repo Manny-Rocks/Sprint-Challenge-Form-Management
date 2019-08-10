@@ -34,17 +34,19 @@ const MyForm = ({ touched,errors,status,isSubmitting,values}) => {
            <button disabled={isSubmitting} type='submit'>Submit</button> 
 
            <label className="checkbox-container">
-                    Accept User Manual?
+                   
             <Field type="checkbox" name="tos" checked={values.tos} />
              <span className="checkmark" />
+             <p className="p"> Accept Terms of Service </p>
+             <h6>Failurre to cmply to our rules and regulations would cost you dearly. Make hay while the sun shines  and do the right thing</h6>
             </label>
         </Form>
 
     {/* mapping over array of function to recive data back from recipe */}
-        <p>RECIPES:</p>{
+        <p className="yes">RECIPES:</p>{
             recipes ? recipes.map(recipe => (
 
-                <p key={Date.now() + Math.random(10000)}> Name : {recipe.name} Course : {recipe.course}   Ingredients:{recipe.ingredients}</p>
+                <p  className ="card" key={Date.now() + Math.random(10000)}> Name : {recipe.name} Course : {recipe.course} </p>
               
               )
               )
@@ -85,7 +87,7 @@ const FormikMyForm = withFormik({
           resetForm();//resetform helps the form to reset itself after we input data into it
           setStatus(res.data);
           console.log(res.data);
-          setSubmitting(false);
+          setSubmitting(true);
         })
         .catch(err => {
           console.log(err);
