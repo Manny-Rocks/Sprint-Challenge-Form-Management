@@ -32,4 +32,14 @@
   }
 }
 
+.registrationForm{
+  display:flex;
+  flex-direction: column;
+}
+.registrationForm h1{
+  color:red;
+}
+.form-feild{
+  width:80%;
+}
 

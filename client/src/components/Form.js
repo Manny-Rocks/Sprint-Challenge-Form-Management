@@ -3,6 +3,7 @@ import { Form, Field, withFormik } from 'formik';
 import * as Yup from 'yup';
 import axios from 'axios';
 
+
 //objects with key value pairs down below...
 const MyForm = ({ touched,errors,status,isSubmitting,values}) => {
 
@@ -10,6 +11,7 @@ const MyForm = ({ touched,errors,status,isSubmitting,values}) => {
 
   useEffect(() => {
     if (status) {
+        //SetRecipes could be the same as setstate which is all the same just a function  and we're setting the state as status???
       setRecipes([...status]);
     }
   }, [status]);
@@ -42,7 +44,7 @@ const MyForm = ({ touched,errors,status,isSubmitting,values}) => {
         <p>RECIPES:</p>{
             recipes ? recipes.map(recipe => (
 
-                <p key={Date.now() + Math.random(10000)}> Name : {recipe.name} Course : {recipe.course}  </p>
+                <p key={Date.now() + Math.random(10000)}> Name : {recipe.name} Course : {recipe.course}   Ingredients:{recipe.ingredients}</p>
               
               )
               )
@@ -80,7 +82,7 @@ const FormikMyForm = withFormik({
         axios
         .post("http://localhost:5000/api/register", values)
         .then(res => {
-          resetForm();
+          resetForm();//resetform helps the form to reset itself after we input data into it
           setStatus(res.data);
           console.log(res.data);
           setSubmitting(false);
@@ -95,7 +97,7 @@ const FormikMyForm = withFormik({
         axios
       .get("http://localhost:5000/api/restricted/data")
       .then(response => {
-        setStatus(response.data);
+        setStatus(response.data);//response data from axios get request(array)
         console.log(response.data);
       })
       .catch(function(error) {
